@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4A8AE621ACDF4C7006BF308 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8AE611ACDF4C7006BF308 /* DetailViewController.m */; };
 		F4DAF6ED1AC9F87900478333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DAF6EC1AC9F87900478333 /* main.m */; };
 		F4DAF6F01AC9F87900478333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DAF6EF1AC9F87900478333 /* AppDelegate.m */; };
 		F4DAF6F61AC9F87900478333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DAF6F41AC9F87900478333 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4A8AE601ACDF4C7006BF308 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F4A8AE611ACDF4C7006BF308 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F4DAF6E71AC9F87900478333 /* coffeeFindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeeFindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DAF6EB1AC9F87900478333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DAF6EC1AC9F87900478333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				F4DFBFA21ACB664400838B88 /* CoffeePlace.h */,
 				F4DFBFA31ACB664400838B88 /* CoffeePlace.m */,
 				F4DAF6F41AC9F87900478333 /* Main.storyboard */,
+				F4A8AE601ACDF4C7006BF308 /* DetailViewController.h */,
+				F4A8AE611ACDF4C7006BF308 /* DetailViewController.m */,
 				F4DAF6F71AC9F87900478333 /* Images.xcassets */,
 				F4DAF6F91AC9F87900478333 /* LaunchScreen.xib */,
 				F4DAF6EA1AC9F87900478333 /* Supporting Files */,
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A8AE621ACDF4C7006BF308 /* DetailViewController.m in Sources */,
 				F4DAF6F01AC9F87900478333 /* AppDelegate.m in Sources */,
 				F4DFBFA41ACB664400838B88 /* CoffeePlace.m in Sources */,
 				F4DAF6ED1AC9F87900478333 /* main.m in Sources */,

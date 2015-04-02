@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ho9-Qp-VPH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +28,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YYw-iJ-55d" id="5L2-Gb-G5A">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ioe-Im-xw2" kind="show" id="fPb-xl-nP7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -47,10 +51,10 @@
                                 <exclude reference="lGu-EJ-8p0"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="DN2-JK-Qub"/>
                                 <exclude reference="8VX-zt-GCb"/>
                                 <exclude reference="KE6-kk-XhP"/>
                                 <exclude reference="mZA-Hx-AVJ"/>
-                                <exclude reference="DN2-JK-Qub"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -58,10 +62,10 @@
                                 <include reference="lGu-EJ-8p0"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="DN2-JK-Qub"/>
                                 <include reference="8VX-zt-GCb"/>
                                 <include reference="KE6-kk-XhP"/>
                                 <include reference="mZA-Hx-AVJ"/>
-                                <include reference="DN2-JK-Qub"/>
                             </mask>
                         </variation>
                     </view>
@@ -73,6 +77,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1617" y="341"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="9Kj-F2-dyf">
+            <objects>
+                <viewController id="ioe-Im-xw2" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KhK-ki-bmx"/>
+                        <viewControllerLayoutGuide type="bottom" id="7OL-wP-aLz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D6y-IB-J9R">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Directions" translatesAutoresizingMaskIntoConstraints="NO" id="Znn-rf-P5w">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Znn-rf-P5w" firstAttribute="leading" secondItem="D6y-IB-J9R" secondAttribute="leadingMargin" constant="-16" id="2xh-n2-5N2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Znn-rf-P5w" secondAttribute="trailing" constant="-16" id="6xN-Wo-NJ6"/>
+                            <constraint firstItem="7OL-wP-aLz" firstAttribute="top" secondItem="Znn-rf-P5w" secondAttribute="bottom" id="G2R-f7-GoS"/>
+                            <constraint firstItem="Znn-rf-P5w" firstAttribute="top" secondItem="KhK-ki-bmx" secondAttribute="bottom" id="Y5Z-za-W4A"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Znn-rf-P5w"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2xh-n2-5N2"/>
+                                <exclude reference="6xN-Wo-NJ6"/>
+                                <exclude reference="Y5Z-za-W4A"/>
+                                <exclude reference="G2R-f7-GoS"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Znn-rf-P5w"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2xh-n2-5N2"/>
+                                <include reference="6xN-Wo-NJ6"/>
+                                <include reference="Y5Z-za-W4A"/>
+                                <include reference="G2R-f7-GoS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Znn-rf-P5w" id="812-HS-LlZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMv-hZ-Sp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2373" y="341"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fet-LO-vso">
