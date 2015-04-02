@@ -11,11 +11,13 @@
 #import <MapKit/MapKit.h>
 #import "CoffeePlace.h"
 
-@interface ListViewController () <CLLocationManagerDelegate>
+@interface ListViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 
 @property CLLocationManager *locationManager;
 @property CLLocation *currentLocation;
+@property NSArray *coffeePlacesArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -61,10 +63,15 @@
             coffeePlace.mapItem = mapItem;
             coffeePlace.milesDifference = milesDifference;
             [temporaryArray addObject:coffeePlace];
-            NSLog(@"%@",coffeePlace.mapItem.name);
 
 
         }
+
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"milesDifference" ascending:true];
+        NSArray *sortedArray = [temporaryArray sortedArrayUsingDescriptors:@[sortDescriptor]];
+        self.coffeePlacesArray = [NSArray arrayWithArray:sortedArray];
+        [self.tableView reloadData];
+
 
 
     }];
@@ -88,6 +95,20 @@
 }
 
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
+{
+
+    return self.coffeePlacesArray.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.textLabel.text = [[[self.coffeePlacesArray objectAtIndex:indexPath.row] mapItem] name];
+    return cell;
+}
 
 @end

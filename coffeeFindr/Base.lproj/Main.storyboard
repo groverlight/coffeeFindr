@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ho9-Qp-VPH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--Coffee Findr-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ListViewController" sceneMemberID="viewController">
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lGu-EJ-8p0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="YYw-iJ-55d">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YYw-iJ-55d" id="5L2-Gb-G5A">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="qpg-HI-BTI"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="S28-Cg-NEf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lGu-EJ-8p0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8VX-zt-GCb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lGu-EJ-8p0" secondAttribute="bottom" id="DN2-JK-Qub"/>
+                            <constraint firstItem="lGu-EJ-8p0" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="KE6-kk-XhP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lGu-EJ-8p0" secondAttribute="trailing" constant="-16" id="mZA-Hx-AVJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lGu-EJ-8p0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8VX-zt-GCb"/>
+                                <exclude reference="KE6-kk-XhP"/>
+                                <exclude reference="mZA-Hx-AVJ"/>
+                                <exclude reference="DN2-JK-Qub"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lGu-EJ-8p0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8VX-zt-GCb"/>
+                                <include reference="KE6-kk-XhP"/>
+                                <include reference="mZA-Hx-AVJ"/>
+                                <include reference="DN2-JK-Qub"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Coffee Findr" id="yVd-QO-pT6"/>
+                    <connections>
+                        <outlet property="tableView" destination="lGu-EJ-8p0" id="5zv-U0-8RJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1617" y="341"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fet-LO-vso">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ho9-Qp-VPH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FlN-xo-K53">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Gp4-7n-FZY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oh3-bb-3II" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="341"/>
         </scene>
     </scenes>
 </document>
